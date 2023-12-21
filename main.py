@@ -39,6 +39,7 @@ class Card:
         exercise = f"{first_number} x {second_number}"
         self.entry = Entry(font=("Ethnocentric", 25, "bold"), width=3, name="entry")
         self.confirm_button = Button(self.can, width=17, text="submit", font=("Alien Encounters", 20, "bold"), bg="#11ff0e", command=self.confirm, name="confirm_button")
+        window.bind('<Return>', self.confirm)
 
         self.card_background = self.can.create_image(400, 263, image=self.card_back_img)
         self.can.create_text(400, 200, text=exercise, font=("Ethnocentric", 80, "bold"))
@@ -46,7 +47,7 @@ class Card:
         self.confirm_button.place(x=250, y=400)
 
 
-    def confirm(self):
+    def confirm(self, *kw):
         entry_int = None
         right = None
         try:
