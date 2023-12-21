@@ -38,6 +38,7 @@ class Card:
         self.result = first_number * second_number
         exercise = f"{first_number} x {second_number}"
         self.entry = Entry(font=("Ethnocentric", 25, "bold"), width=3, name="entry")
+        self.entry.focus_set()
         self.confirm_button = Button(self.can, width=17, text="submit", font=("Alien Encounters", 20, "bold"), bg="#11ff0e", command=self.confirm, name="confirm_button")
         window.bind('<Return>', self.confirm)
 
