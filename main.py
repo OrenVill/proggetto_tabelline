@@ -16,6 +16,7 @@ class Card:
         self.entry = None
         self.card_background = None
         self.result = None
+        self.exit_buttun = None
         self.can = Canvas(width=800, height=526)
         self.card_front_img= PhotoImage(file="images/card_front.png")
         self.card_back_img = PhotoImage(file="images/card_back.png")
@@ -42,10 +43,13 @@ class Card:
         self.confirm_button = Button(self.can, width=17, text="submit", font=("Alien Encounters", 20, "bold"), bg="#11ff0e", command=self.confirm, name="confirm_button")
         window.bind('<Return>', self.confirm)
 
+        self.exit_buttun = Button(self.can, text="esci", font=("Alien Encounters", 20, "bold"), bg="red", fg="white", command=window.destroy)
+
         self.card_background = self.can.create_image(400, 263, image=self.card_back_img)
         self.can.create_text(400, 200, text=exercise, font=("Ethnocentric", 80, "bold"))
         self.can.create_window(400, 300, window=self.entry)
         self.confirm_button.place(x=250, y=400)
+        self.exit_buttun.place(x=600, y=275)
 
 
     def confirm(self, *kw):
@@ -86,7 +90,7 @@ class Card:
         self.can.create_window(400, 350, window=result_labeel)
 
         self.can.update()
-        sleep(3)
+        sleep(1)
         self.new_card()
 
 
