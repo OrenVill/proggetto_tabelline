@@ -1,0 +1,33 @@
+.ExerciseText{
+    display: flex;
+    font-size: 5rem;
+    color: blue;  
+}
+.ExerciseConteiner{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 50rem;
+    background-color: beige;
+    width: 50rem;
+    margin-top: 3rem;
+}
+
+.screen{
+    display: flex;
+    background-color: crimson;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
